@@ -1,5 +1,10 @@
 import cv2 as cv
 '''
+Pre Processamento
+Processo que busca realçar objetos/características de interesse em imagens
+é feito para facilitar o processo de segmentação da Imagem
+
+---------------------------------------------------------------
 Valor numérico do pixel na posição 150, 150 da matriz de pixels
 que representa a imagem
 
