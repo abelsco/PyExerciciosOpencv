@@ -45,5 +45,7 @@ cv.waitKey(0)
 cv.destroyAllWindows()
 
 '''
-
+*Ajuste perpectiva
+warpPerspective()
+getPerpectiveTransform()
 '''

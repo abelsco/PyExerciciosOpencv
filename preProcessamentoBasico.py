@@ -35,4 +35,34 @@ printValor(img, 'HSV')
 print('[{i}] Linhas:{i[0]} Colunas:{i[1]} Canais:{i[2]}'.format(i=img.shape))
 
 # Tamanho da imagem (Linhas x Colunas)/Canais
-print('{} pixels'.format(int(img.size/3)))
+print('{} pixels'.format(int(img.size/img.shape[2])))
+
+'''
+Operações aritiméticas
+Permite adcionar conteúdo e/ou mesclar imagens (mesma dimensão e tipo)
+**Possibilidade de overflow (operação gerar um numero fora da faixa de
+representação da imagem)
+Ex.: 8 bits -> 256 possibilidades
+[0, 14] = 255
+[0, 14] += 15
+[0, 14] = 270 -> ERRO
+
+Adição
+imgRes = cv2.add(imgA, imgB)
+imgRes = cv2.add(img, 40) # mais claro
+imgRes = cv2.add(img, -40)
+
+Subtração
+imgRes = cv2.subtract(imgA, imgB)
+imgRes = cv2.subtract(img, 40) # mais escuro
+imgRes = cv2.subtract(img, -40)
+== Mesma ideia para as outras Operações
+
+Mistura
+Funciona como a soma, porem com pesos diferentes para as imagens(transparência)
+quanto menor o peso mais tranparente a imagem fica.
+addWeighted(src1, alpha, src2, beta, gamma)
+==>srcx -> Matrizes referentes as imagens
+==>alpha/beta -> Intensidade das imagens (peso)
+==>gamma -> Escalar
+'''
